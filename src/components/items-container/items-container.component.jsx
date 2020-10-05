@@ -12,7 +12,7 @@ export class ItemsContainer extends Component {
                   title: 'CAPS',
                   imageUrl: 'https://sevenseven.co.uk/uploads/imager/sevenseven_co_uk/7375f015c2410ce972bff4c5ec5e7faf/photo_1_5e6c910d97fddbfcb3c906fcb5c7b0dd.jpg',
                   id: 1,
-                  linkUrl: 'shop/hats'
+                  linkUrl: 'shop/caps'
                 },
                 {
                   title: 'JACKETS',
@@ -47,8 +47,8 @@ export class ItemsContainer extends Component {
     render() {
         return (
             <div className="items-container">
-                {this.state.sections.map(({ title, imageUrl, id, size}) => (
-                    <Items key={id} imageUrl={imageUrl} title={title} size={size}/>
+                {this.state.sections.map(({ id, ...otherProps}) => (
+                    <Items key={id} {...otherProps}/>
                 ))}
             </div>
         )

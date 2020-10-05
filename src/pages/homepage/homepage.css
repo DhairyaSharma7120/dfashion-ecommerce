@@ -7,3 +7,9 @@
     background-color: white;
 }
 
+@media (max-width: 500px){
+    .homepage{
+        padding: 0;
+        margin: 20px;
+    }
+}
