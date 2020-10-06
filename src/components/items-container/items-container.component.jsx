@@ -9,10 +9,10 @@ export class ItemsContainer extends Component {
         this.state = {
             sections: [
                 {
-                  title: 'CAPS',
+                  title: 'HATS&CAPS',
                   imageUrl: 'https://sevenseven.co.uk/uploads/imager/sevenseven_co_uk/7375f015c2410ce972bff4c5ec5e7faf/photo_1_5e6c910d97fddbfcb3c906fcb5c7b0dd.jpg',
                   id: 1,
-                  linkUrl: 'shop/caps'
+                  linkUrl: 'shop/hats'
                 },
                 {
                   title: 'JACKETS',
