@@ -19,7 +19,7 @@ const Header = () => {
             <div className='nav-links-container'>
                 <Link to='/shop' className='nav-links'>SHOP</Link>
                 <Link to='/shop' className='nav-links'>CONTACT</Link>
-                <Link to='/shop' className='nav-links'>SINGIN</Link>
+                <Link to='/signin' className='nav-links'>SINGIN</Link>
                 <Link to='/shop' className='nav-links cart'><ShoppingCartIcon/></Link>
             </div>           
         </div>

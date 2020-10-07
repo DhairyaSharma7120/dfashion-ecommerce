@@ -45,12 +45,14 @@
         color: whitesmoke;
         padding: 10px;
         width: 100%;
-        background-color: rgba(0,0,0,0.6);
-        border: none;
+        background-color: rgba(0,0,0);
+        border: 1px solid black;
         border-radius: 0px;
       }
       .add-to-cart-btn:hover{
-        background-color: rgba(0,0,0,0.5);
+        color: black;
+        
+        background-color: white;
       }
     }
   }
