@@ -1,6 +1,6 @@
 .sign-in{
-    width: 30vw;
-    padding: 30px;
+    width: 380px;
+    
     
     h1{
         font-family: 'Open Sans Condensed', sans-serif;
@@ -9,6 +9,9 @@
         font-family: 'Open Sans Condensed', sans-serif;
         font-weight: bold;
         word-spacing: 2px;
-        
+    }
+    .signin-btns{
+        display: flex;
+        justify-content: space-between;
     }
 }

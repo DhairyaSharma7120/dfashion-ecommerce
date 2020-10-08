@@ -63,6 +63,7 @@
             font-family: 'Open Sans Condensed', sans-serif;
             font-weight: bold;
             text-decoration: none;
+            cursor: pointer;
             font-size: large;
             transition: 0.3s;
         }
@@ -70,7 +71,8 @@
             font-size: 130%;
         }
         .cart{
-            transform: scale(1.2);
+            transform: scale(1.1);
+            margin-top: 5px;
         }
         .cart:hover{
             animation-name: cart;
@@ -93,6 +95,21 @@
             100%{
                 transform: rotate(-10deg);
             }
+        }
+        .userprofile{
+          color: grey;
+          transform: scale(1.5);
+          width: 20px;
+          height: 20px;
+          border: 1px solid black;
+          border-radius: 100%;
+          background-size: cover;
+          // margin-top: -5px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        .userprofile:hover{
+          transform: scale(1.6);
         }
     }
 }

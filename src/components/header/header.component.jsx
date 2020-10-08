@@ -2,7 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './header.styles.scss'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-const Header = () => {
+// import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
+import { auth } from '../../firebase/firebase.utils'
+const Header = ({ currentUser, profilePic }) => {
     return (
         <div className='header'>
             <Link to='/' className='logo-container'>
@@ -19,8 +21,21 @@ const Header = () => {
             <div className='nav-links-container'>
                 <Link to='/shop' className='nav-links'>SHOP</Link>
                 <Link to='/shop' className='nav-links'>CONTACT</Link>
-                <Link to='/signin' className='nav-links'>SINGIN</Link>
+                {
+                    currentUser?
+                    <div className='nav-links' onClick={()=> auth.signOut()}>SIGN OUT</div>
+                    :
+                    <Link to='/signin' className='nav-links'>SING IN</Link>
+                }
                 <Link to='/shop' className='nav-links cart'><ShoppingCartIcon/></Link>
+                {   
+                    currentUser?
+                    // <AccountCircleSharpIcon className='userprofile'/>:null
+                    <div className='userprofile'
+                     style={{backgroundImage: `url(${profilePic})`}}
+                     ></div>: null
+                }
+                
             </div>           
         </div>
     )
