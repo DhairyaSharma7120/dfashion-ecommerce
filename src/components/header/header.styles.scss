@@ -7,6 +7,8 @@
         text-decoration: none;
         font-size: xx-large;
         color: black;
+
+        
         
         .logo-letter {
             animation-duration: 1s;
@@ -112,4 +114,34 @@
           transform: scale(1.6);
         }
     }
+}
+
+@media (max-width: 600px){
+  .header{
+    padding-left: 0;
+    padding-right: 0;
+    
+  }
+  .logo-container{
+    transform: scale(0.7);
+  
+  }
+  .nav-links-container{
+    transform: scale(0.8);
+  }
+}
+@media (max-width: 600px){
+  .header{
+    padding-left: 0;
+    padding-right: 0;
+    display: grid;
+    grid-gap: 20px;
+    place-content: center;
+  }
+  .logo-container{
+    transform: scale(1);
+  }
+  .nav-links-container{
+    transform: scale(1);
+  }
 }

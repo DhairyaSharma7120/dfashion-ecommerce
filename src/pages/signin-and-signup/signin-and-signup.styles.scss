@@ -1,7 +1,11 @@
 .signin-and-signup{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
     margin: 40px;
-
-    
+}
+@media(max-width:500px){
+    .signin-and-signup{
+        margin: 0;
+        grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    }
 }

@@ -14,3 +14,11 @@
       grid-gap: 30px;
     }
   }
+
+  @media(max-width:540px){
+    .collection-preview{
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-top: 20px;
+    }
+  }

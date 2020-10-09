@@ -22,14 +22,14 @@ const Header = ({ currentUser, profilePic }) => {
                 <Link to='/shop' className='nav-links'>SHOP</Link>
                 <Link to='/shop' className='nav-links'>CONTACT</Link>
                 {
-                    currentUser?
+                    currentUser != null?
                     <div className='nav-links' onClick={()=> auth.signOut()}>SIGN OUT</div>
                     :
                     <Link to='/signin' className='nav-links'>SING IN</Link>
                 }
                 <Link to='/shop' className='nav-links cart'><ShoppingCartIcon/></Link>
                 {   
-                    currentUser?
+                    currentUser != null?
                     // <AccountCircleSharpIcon className='userprofile'/>:null
                     <div className='userprofile'
                      style={{backgroundImage: `url(${profilePic})`}}

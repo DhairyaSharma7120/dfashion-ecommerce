@@ -1,0 +1,16 @@
+.sign-up{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    justify-self: center;
+    transition: 1s;
+
+    .title{
+        margin: 10px 0;
+    }
+}
+@media(max-width:1100px){
+    .sign-up{
+        transform: scale(0.8);
+    }
+}

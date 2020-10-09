@@ -3,6 +3,7 @@ import FormInput from '../../components/form-input/form-input.component'
 import './signin.styles.scss'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import { signInWithGoogle } from '../../firebase/firebase.utils'
+// import { sendEmail } from '../../email-testing/email'
 
 export class Signin extends Component {
     constructor(){
@@ -24,6 +25,7 @@ export class Signin extends Component {
         const { name, value } = event.target;
         this.setState( { [name]: value } )
     }
+
     render() {
         return (
             <div className='sign-in'>
@@ -50,6 +52,7 @@ export class Signin extends Component {
                     <div className='signin-btns'>
                         <CustomButton type='submit'>Sign in</CustomButton>
                         <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in With Google</CustomButton>
+                        {/* <CustomButton onClick={sendEmail}>Send Email</CustomButton> */}
                     </div>
                 </form>
             </div>
