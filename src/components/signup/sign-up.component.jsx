@@ -47,7 +47,7 @@ export class SignUp extends Component {
         this.setState({ [name]: value });
     }
     render() {
-        const { displayName,email,password,confirmPassword } = this.state;
+    
         return (
             <div className="sign-up">
                 <h2 className='title'>I do not have a account</h2>
@@ -56,8 +56,8 @@ export class SignUp extends Component {
                     <FromInput
                     type='text'
                     name='displayName'
-                    value = {displayName}
-                    onChange={this.handleChange}
+                    value = {this.state.displayName}
+                    handleChange={this.handleChange}
                     label='Display Name'
                     required
                     />
@@ -65,8 +65,8 @@ export class SignUp extends Component {
                     <FromInput
                     type='email'
                     name='email'
-                    value = {email}
-                    onChange={this.handleChange}
+                    value = {this.state.email}
+                    handleChange={this.handleChange}
                     label='Email'
                     required
                     />
@@ -74,8 +74,8 @@ export class SignUp extends Component {
                     <FromInput
                     type='password'
                     name='password'
-                    value = {password}
-                    onChange={this.handleChange}
+                    value = {this.state.password}
+                    handleChange={this.handleChange}
                     label='Password'
                     required
                     />
@@ -83,8 +83,8 @@ export class SignUp extends Component {
                     <FromInput
                     type='password'
                     name='confirmPassword'
-                    value = {confirmPassword}
-                    onChange={this.handleChange}
+                    value = {this.state.confirmPassword}
+                    handleChange={this.handleChange}
                     label='Confirm Password'
                     required
                     />

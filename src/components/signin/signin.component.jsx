@@ -3,6 +3,7 @@ import FormInput from '../../components/form-input/form-input.component'
 import './signin.styles.scss'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import { signInWithGoogle } from '../../firebase/firebase.utils'
+import { auth } from '../../firebase/firebase.utils'
 // import { sendEmail } from '../../email-testing/email'
 
 export class Signin extends Component {
@@ -15,9 +16,17 @@ export class Signin extends Component {
         }
     }
 
-    handleSubmit = event =>{
+    handleSubmit = async event =>{
         event.preventDefault();
 
+        const {email,password} = this.state;
+
+        try {
+            await auth.signInWithEmailAndPassword(email,password)
+            this.setState({email:'',password:''})
+        } catch (error) {
+            alert("Wrong Email or Password")
+        }
         this.setState({email:'',password:''})
     }
 
@@ -51,7 +60,7 @@ export class Signin extends Component {
                     
                     <div className='signin-btns'>
                         <CustomButton type='submit'>Sign in</CustomButton>
-                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>Sign in With Google</CustomButton>
+                        <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>Sign in With Google</CustomButton>
                         {/* <CustomButton onClick={sendEmail}>Send Email</CustomButton> */}
                     </div>
                 </form>

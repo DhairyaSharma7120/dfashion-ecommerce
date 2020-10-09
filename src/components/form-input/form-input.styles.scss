@@ -1,5 +1,5 @@
-$sub-color: black;
-$main-color: red;
+$sub-color: red;
+$main-color: black;
 
 @mixin shrinkLabel {
   top: -14px;
@@ -48,7 +48,9 @@ $main-color: red;
     transition: 300ms ease all;
 
     &.shrink {
-      @include shrinkLabel();
+        top: -14px;
+        font-size: 12px;
+        color: $main-color;
     }
   }
 }
