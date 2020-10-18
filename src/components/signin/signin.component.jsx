@@ -60,7 +60,12 @@ export class Signin extends Component {
                     
                     <div className='signin-btns'>
                         <CustomButton type='submit'>Sign in</CustomButton>
-                        <CustomButton type='button' onClick={signInWithGoogle} isGoogleSignIn>Sign in With Google</CustomButton>
+                        <div className="google-btn" onClick={signInWithGoogle}>
+                            <div className="google-icon-wrapper">
+                                <img className="google-icon" alt='google-icon' src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+                            </div>
+                            <p className="btn-text"><b>Sign in with google</b></p>
+                        </div>
                         {/* <CustomButton onClick={sendEmail}>Send Email</CustomButton> */}
                     </div>
                 </form>

@@ -50,8 +50,8 @@ export class SignUp extends Component {
     
         return (
             <div className="sign-up">
-                <h2 className='title'>I do not have a account</h2>
-                <span>Sign-up with your email and password</span>
+                <h1 className='title'>I do not have a account</h1>
+                <span className='sign-up-title'>Sign-up with your email and password</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmit}>
                     <FromInput
                     type='text'

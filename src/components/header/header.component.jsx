@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom'
 import './header.styles.scss'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-// import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
+import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
 import { auth } from '../../firebase/firebase.utils'
+import { connect } from 'react-redux';
 const Header = ({ currentUser, profilePic }) => {
+    console.log(currentUser)
     return (
         <div className='header'>
             <Link to='/' className='logo-container'>
@@ -21,24 +23,29 @@ const Header = ({ currentUser, profilePic }) => {
             <div className='nav-links-container'>
                 <Link to='/shop' className='nav-links'>SHOP</Link>
                 <Link to='/shop' className='nav-links'>CONTACT</Link>
-                {
-                    currentUser != null?
-                    <div className='nav-links' onClick={()=> auth.signOut()}>SIGN OUT</div>
+                { 
+                    currentUser != null ?
+                    
+                    <div className='nav-links' onClick={() => auth.signOut()}>SIGN OUT</div>
                     :
                     <Link to='/signin' className='nav-links'>SING IN</Link>
                 }
                 <Link to='/shop' className='nav-links cart'><ShoppingCartIcon/></Link>
                 {   
-                    currentUser != null?
-                    // <AccountCircleSharpIcon className='userprofile'/>:null
-                    <div className='userprofile'
-                     style={{backgroundImage: `url(${profilePic})`}}
-                     ></div>: null
+                    currentUser != null ?
+                        profilePic != null?
+                        // :null
+                        <div className='userprofile'
+                        style={{backgroundImage: `url(${profilePic})`}}
+                        ></div> : <AccountCircleSharpIcon className='userprofile'/> : null
                 }
                 
             </div>           
         </div>
     )
 }
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+}) 
 
-export default Header
+export default connect(mapStateToProps)(Header);

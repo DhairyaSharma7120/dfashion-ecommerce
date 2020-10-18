@@ -1,3 +1,6 @@
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
 .sign-in{
     display: flex;
     flex-direction: column;
@@ -16,6 +19,47 @@
     .signin-btns{
         display: flex;
         justify-content: space-between;
+
+        .google-btn {
+            width: 184px;
+            height: 50px;
+            background-color: $google-blue;
+            border-radius: 2px;
+            box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+            cursor: pointer;
+            .google-icon-wrapper {
+              position: absolute;
+              margin-top: 0px;
+              margin-left: 0px;
+              width: 41px;
+              height: 50px;
+              border-radius: 2px;
+              background-color: $white;
+            }
+            .google-icon {
+              position: absolute;
+              margin-top: 11px;
+              margin-left: -10px;
+              width: 20px;
+              height: 25px;
+            }
+            .btn-text {
+              float: right;
+              margin: 15px 11px 0 0;
+              color: $white;
+              font-size: 12px;
+              letter-spacing: 0.5px;
+              font-family: 'Montserrat', sans-serif;
+              
+            }
+            &:hover {
+              background-color: #2f60ad;
+            }
+            &:active {
+              background: $button-active-blue;
+            }
+          }
+          
     }
 }
 @media(max-width:1100px){
