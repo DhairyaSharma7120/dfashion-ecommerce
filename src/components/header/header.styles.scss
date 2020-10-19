@@ -72,32 +72,7 @@
         .nav-links:hover{
             font-size: 130%;
         }
-        .cart{
-            transform: scale(1.1);
-            margin-top: 5px;
-        }
-        .cart:hover{
-            animation-name: cart;
-            animation-duration: 1s;
-            
-        }
-        @keyframes cart {
-            0%{
-
-            }
-            25%{
-                transform: rotate(10deg);
-            }
-            50%{
-                transform: rotate(-10deg);
-            }
-            75%{
-                transform: rotate(10deg);
-            }
-            100%{
-                transform: rotate(-10deg);
-            }
-        }
+        
         .userprofile{
           color: grey;
           transform: scale(1.5);

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './header.styles.scss'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import CartIcon from '../cart-icon/cart-icon.component'
+import CartDropdown from '../cart-dropdown/cart-dropdown.comonent'
 import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
 import { auth } from '../../firebase/firebase.utils'
 import { connect } from 'react-redux';
-const Header = ({ currentUser, profilePic }) => {
+const Header = ({ currentUser, profilePic, hidden }) => {
     console.log(currentUser)
     return (
         <div className='header'>
@@ -30,7 +31,7 @@ const Header = ({ currentUser, profilePic }) => {
                     :
                     <Link to='/signin' className='nav-links'>SING IN</Link>
                 }
-                <Link to='/shop' className='nav-links cart'><ShoppingCartIcon/></Link>
+                <Link to='/shop' className=''><CartIcon /></Link>
                 {   
                     currentUser != null ?
                         profilePic != null?
@@ -40,12 +41,14 @@ const Header = ({ currentUser, profilePic }) => {
                         ></div> : <AccountCircleSharpIcon className='userprofile'/> : null
                 }
                 
-            </div>           
+            </div>
+            {    hidden? null: <CartDropdown /> }
         </div>
     )
 }
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user : { currentUser }, cart: { hidden } }) => ({
+    currentUser,
+    hidden
 }) 
 
 export default connect(mapStateToProps)(Header);

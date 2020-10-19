@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import {addItem} from '../../redux/cart/cart.action';
 import './preview-items.styles.scss'
-const PreviewCollection = ({id, name, price, imageUrl}) => {
+const PreviewCollection = ({item , addItem}) => {
+    const  { name, price, imageUrl} = item;
     return (
         <div className='preview-items'>
             
@@ -16,7 +19,7 @@ const PreviewCollection = ({id, name, price, imageUrl}) => {
             </div>
             <div className="add-to-cart">
                 <button className='add-to-cart-btn'
-                onClick ={(e)=>{console.log(e.value)}}
+                onClick ={() => addItem(item)}
                 >ADD TO CART</button>
             </div>
             
@@ -24,4 +27,7 @@ const PreviewCollection = ({id, name, price, imageUrl}) => {
         </div>
     )
 }
-export default PreviewCollection
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+export default connect(null, mapDispatchToProps)(PreviewCollection);
