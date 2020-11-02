@@ -31,7 +31,7 @@ const Header = ({ currentUser, profilePic, hidden }) => {
                     :
                     <Link to='/signin' className='nav-links'>SING IN</Link>
                 }
-                <Link to='/shop' className=''><CartIcon /></Link>
+                <Link className=''><CartIcon /></Link>
                 {   
                     currentUser != null ?
                         profilePic != null?

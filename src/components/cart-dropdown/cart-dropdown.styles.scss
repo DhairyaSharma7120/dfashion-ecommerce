@@ -15,7 +15,28 @@
       height: 240px;
       display: flex;
       flex-direction: column;
-    //   overflow: scroll;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+        /* width */
+    ::-webkit-scrollbar {
+      width: 5px;
+      
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #888; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: red; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
     }
   
     button {
