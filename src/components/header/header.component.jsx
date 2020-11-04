@@ -4,6 +4,9 @@ import './header.styles.scss'
 import CartIcon from '../cart-icon/cart-icon.component'
 import CartDropdown from '../cart-dropdown/cart-dropdown.comonent'
 import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
+import { createStructuredSelector } from 'reselect'
+import { selectCartHidden } from '../../redux/cart/cart.selector';
+import { selectCurrentUser } from '../../redux/user/user.selector'
 import { auth } from '../../firebase/firebase.utils'
 import { connect } from 'react-redux';
 const Header = ({ currentUser, profilePic, hidden }) => {
@@ -46,9 +49,9 @@ const Header = ({ currentUser, profilePic, hidden }) => {
         </div>
     )
 }
-const mapStateToProps = ({user : { currentUser }, cart: { hidden } }) => ({
-    currentUser,
-    hidden
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser,
+    hidden: selectCartHidden
 }) 
 
 export default connect(mapStateToProps)(Header);
