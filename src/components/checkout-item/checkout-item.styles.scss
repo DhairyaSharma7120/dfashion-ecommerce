@@ -30,5 +30,22 @@
       margin-left: 42px;
       cursor: pointer;
     }
+    .remove-button:hover{
+      // transform: scale(1);
+      animation-name: removeitem;
+      animation-duration: 1s;  
+      animation-fill-mode: forwards;
+     }
+     @keyframes removeitem{
+       0%{
+        transform: rotate(0);
+       }
+       100%{
+        // transform: scale(1.5);
+        color: red;
+        transform: rotate(360deg); 
+       }
+     }
   }
+
   
