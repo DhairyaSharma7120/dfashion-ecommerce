@@ -6,10 +6,12 @@
     padding: 15px 0;
     font-size: 20px;
     align-items: center;
+    transition: 0.3s;
   
     .image-container {
       width: 23%;
       padding-right: 15px;
+      transition: 0.3s;;
   
       img {
         width: 100%;
@@ -24,6 +26,34 @@
   
     .quantity {
       padding-left: px;
+      
+      .quantity-box{
+        margin: 0;
+        border: 1px solid black;
+        padding: 2px 10px;
+      }
+      .decrease-quantity{
+        padding: 0;
+        margin-right: 5px;
+        font-size: 30px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .decrease-quantity:hover{
+
+        background-color: lightsalmon;
+      }
+      .increase-quantity{
+        // background-color: lightgreen  ;
+        margin-left: 5px;
+        font-size: 30px;
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      .increase-quantity:hover{
+
+        background-color: lightgreen;
+      }
     }
   
     .remove-button {
