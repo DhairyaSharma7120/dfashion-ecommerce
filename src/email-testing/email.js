@@ -4,8 +4,8 @@ init("user_bmd04T6skv03GYujwqnD7");
 
 
 var templateParams = {
-    name: 'Anas',
-    send_to: 'anaskail2737@gmail.com'
+    name: 'Lamha',
+    send_to: 'lamhabansal1912@gmail.com'
        
 };
 export const sendEmail = () =>{

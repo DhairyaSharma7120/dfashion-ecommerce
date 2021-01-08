@@ -9,6 +9,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selector';
 import { selectCurrentUser } from '../../redux/user/user.selector'
 import { auth } from '../../firebase/firebase.utils'
 import { connect } from 'react-redux';
+// import {sendEmail} from '../../email-testing/email'
 const Header = ({ currentUser, profilePic, hidden }) => {
     console.log(currentUser)
     return (
@@ -25,6 +26,7 @@ const Header = ({ currentUser, profilePic, hidden }) => {
                 <span className="logo-letter red">N</span>
             </Link>
             <div className='nav-links-container'>
+                {/* <div className="nav-links" >send</div> */}
                 <Link to='/shop' className='nav-links'>SHOP</Link>
                 <Link to='/shop' className='nav-links'>CONTACT</Link>
                 { 
