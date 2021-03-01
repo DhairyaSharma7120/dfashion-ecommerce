@@ -9,7 +9,7 @@ const PreviewCollection = ({item , addItem}) => {
             
             <div className='image'
                 style={{
-                    backgroundImage: `url(${imageUrl})`
+                    backgroundImage: `url(${imageUrl})` 
                 }
                 }/>
             

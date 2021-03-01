@@ -11,7 +11,7 @@ import { auth } from '../../firebase/firebase.utils'
 import { connect } from 'react-redux';
 // import {sendEmail} from '../../email-testing/email'
 const Header = ({ currentUser, profilePic, hidden }) => {
-    console.log(currentUser)
+    // console.log(currentUser)
     return (
         <div className='header'>
             <Link to='/' className='logo-container'>
@@ -36,7 +36,7 @@ const Header = ({ currentUser, profilePic, hidden }) => {
                     :
                     <Link to='/signin' className='nav-links'>SING IN</Link>
                 }
-                <Link className=''><CartIcon /></Link>
+                <CartIcon />
                 {   
                     currentUser != null ?
                         profilePic != null?
